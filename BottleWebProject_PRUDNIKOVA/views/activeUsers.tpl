@@ -64,4 +64,17 @@
                 >
                 </bodyTextAu>
 </form>
+%import json
+%dataUsers = {}
+%with open('activeUserFile.json') as jsonFile:
+    %dataUsers=json.load(jsonFile)
+%res=dict(reversed(list(dataUsers.items())))
+%for key in res:
+    %array=res[key]
+        <pAU1>{{res[key][0]}} {{res[key][1]}}</pAU1><br>
+        <bodyTextAu>Phone: {{key}}<br>
+        About yoursels: {{res[key][2]}}
+        </bodyTextAu>
+        <hr>
+        <br><br><br><br>
 
