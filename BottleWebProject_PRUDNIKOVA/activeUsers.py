@@ -15,7 +15,7 @@ def active_user_page():
     if(checkPhone.check_phone(phone)):
         try:
             #loading a dictionary from file
-            with open('activeUserFile.json', 'a') as jsonFile:
+            with open('activeUserFile.json') as jsonFile:
                 dataUser=json.load(jsonFile)
         except:
             pass
